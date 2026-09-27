@@ -1,0 +1,308 @@
+[
+  {
+    "id": "q6",
+    "number": 6,
+    "type": "Hotspot",
+    "questionType": "multi-dropdown",
+    "question": "HOTSPOT -\nYou need to ensure that App1 meets the following requirements:\nAuthenticates by using a Microsoft Entra managed identity\nHow should you complete the Python code? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
+    "code": "from azure.identity import DefaultAzureCredential\nfrom azure.ai.projects import AIProjectClient\n\ncredential = [credential]\nproject_client = AIProjectClient(\n    endpoint=\"https://contosoai.services.ai.azure.com/api/projects/project1\",\n    credential=credential,\n)\nwith project_client.get_openai_client() as openai_client:\n    response = openai_client.responses.[method](\n        model=\"trail-guide-chat\",\n        input=\"Create a 3-day hiking itinerary near Seattle.\",\n    )\n    print(response.output_text)",
+    "answerFields": [
+      {
+        "id": "credential",
+        "label": "credential",
+        "options": [
+          { "id": "azure-key", "label": "AzureKeyCredential" },
+          { "id": "client-secret", "label": "ClientSecretCredential" },
+          { "id": "default-azure", "label": "DefaultAzureCredential" }
+        ]
+      },
+      {
+        "id": "response-method",
+        "label": "openai_client.responses method",
+        "options": [
+          { "id": "compact", "label": "compact" },
+          { "id": "create", "label": "create" },
+          { "id": "retrieve", "label": "retrieve" }
+        ]
+      }
+    ],
+    "correctAnswers": ["credential:default-azure", "response-method:create"]
+  },
+  {
+    "id": "q7",
+    "number": 7,
+    "type": "Hotspot",
+    "questionType": "multi-dropdown",
+    "question": "You have a Microsoft Foundry project that contains a workflow for a customer support triage process.\nYou have an Ask a question node that stores user responses in a local variable named Var01.\nYou need to create the following Power Fx expressions:\nAn if/else condition expression that ensures that Var01 contains a value\nA Send message expression that returns the stored user response in uppercase\nNOTE: Each correct selection is worth one point.",
+    "answerFields": [
+      {
+        "id": "if-else-condition",
+        "label": "If/else condition expression",
+        "options": [
+          { "id": "is-blank", "label": "IsBlank(Local.Var01)" },
+          { "id": "is-empty", "label": "IsEmpty(Local.Var01)" },
+          { "id": "not-is-blank", "label": "Not(IsBlank(Local.Var01))" }
+        ]
+      },
+      {
+        "id": "send-message",
+        "label": "Send message expression",
+        "options": [
+          { "id": "local-var", "label": "(Local.Var01)" },
+          { "id": "upper-local-var", "label": "(Upper(Local.Var01))" },
+          { "id": "upper-var", "label": "(Upper(Var01))" }
+        ]
+      }
+    ],
+    "correctAnswers": ["if-else-condition:not-is-blank", "send-message:upper-local-var"]
+  },
+  {
+    "id": "q8",
+    "number": 8,
+    "type": "Hotspot",
+    "questionType": "multi-dropdown",
+    "question": "You have a Microsoft Foundry project that contains a customer support agent built by using the Foundry Agent Service.\nThe agent uploads user-provided screenshots to Azure Storage through a ticketing tool and receives a blob URL for additional reasoning.\nYou need to use image moderation during agent runs and prevent harmful content from being returned during runs. Azure AI Content Safety must access the images by using the blob URL. The solution must follow the principle of least privilege.\nWhat should you configure for Content Safety? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
+    "answerFields": [
+      {
+        "id": "guardrails",
+        "label": "Guardrails",
+        "options": [
+          { "id": "tool-call-block", "label": "Select Tool call and set Action to Block." },
+          { "id": "input-output-annotate", "label": "Select User input and Output and set Action to Annotate." },
+          { "id": "input-tool-response-annotate", "label": "Select User input and Tool response and set Action to Annotate." },
+          { "id": "all-block", "label": "Select User input, Output, Tool response, and Tool call and set Action to Block." }
+        ]
+      },
+      {
+        "id": "storage-access",
+        "label": "Storage access",
+        "options": [
+          { "id": "storage-keys", "label": "Storage account access keys" },
+          { "id": "user-queue-contributor", "label": "A user-assigned identity that is assigned the Storage Queue Data Contributor role" },
+          { "id": "system-blob-reader", "label": "A system-assigned managed identity that is assigned the Storage Blob Data Reader role" },
+          { "id": "system-blob-contributor", "label": "A system-assigned managed identity that is assigned the Storage Blob Data Contributor role" }
+        ]
+      }
+    ],
+    "correctAnswers": ["guardrails:all-block", "storage-access:system-blob-reader"]
+  },
+  {
+    "id": "q9",
+    "number": 9,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a Microsoft Foundry project that contains three agents as shown in the following table.\nTriageAgent: Classifies incoming customer requests\nPolicyAgent: Answers policy questions by searching internal content\nActionAgent: Creates or updates tickets by calling an HTTP API\n\nYou need to orchestrate the agents to ensure that the customer requests meet the following requirements:\nSupport a deterministic, step-based process that uses conditional branching and shared state across the agents.\nOptionally trigger a ticket action based on the triage result.\nThe solution must minimize development effort.\nWhat should you include in the solution?",
+    "options": [
+      { "id": "a", "label": "A. a workflow" },
+      { "id": "b", "label": "B. threads and runs without a workflow" },
+      { "id": "c", "label": "C. a multi-agent group chat session" },
+      { "id": "d", "label": "D. separate agent runs coordinated in the application code" }
+    ],
+    "correctAnswers": ["a"]
+  },
+  {
+    "id": "q10",
+    "number": 10,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a Microsoft Foundry project that contains an agent. The agent uses Azure Speech in Foundry Tools.\nYou fine-tune a baseline speech to text model for the en-us locale and publish the model.\nThe agent calls the Speech to text REST API and returns an error message indicating that the project ID is invalid.\nYou need to set the project property to the correct ID.\nTo what should you set the project property?",
+    "options": [
+      { "id": "a", "label": "A. the project URL" },
+      { "id": "b", "label": "B. the custom speech project ID" },
+      { "id": "c", "label": "C. the project ID" },
+      { "id": "d", "label": "D. the custom speech endpoint URL" }
+    ],
+    "correctAnswers": ["b"]
+  },
+  {
+    "id": "q11",
+    "number": 11,
+    "type": "Hotspot",
+    "questionType": "multi-dropdown",
+    "question": "HOTSPOT -\nYou have a Microsoft Foundry project that contains an agent named PaymentAgent.\nPaymentAgent includes a function tool that issues customer refunds by using an external API.\nYou are creating a workflow in YAML.\nYou need to ensure that the workflow pauses for human approval and continues with the refund step only after approval is granted.\nHow should you complete the workflow definition? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
+    "code": "steps:\n- id: propose_refund\n  type: agent\n  agent: PaymentAgent\n- id: approval\n  type: [type]\n- id: execute_refund\n  type: agent\n  agent: PaymentAgent\n  condition: [condition]",
+    "answerFields": [
+      {
+        "id": "approval-type",
+        "label": "approval type",
+        "options": [
+          { "id": "ask-question", "label": "ask_question" },
+          { "id": "basic-chat", "label": "basic_chat" },
+          { "id": "data-transformation", "label": "data_transformation" }
+        ]
+      },
+      {
+        "id": "approval-condition",
+        "label": "condition",
+        "options": [
+          { "id": "approved", "label": "approval == \"approved\"" },
+          { "id": "output-not-null", "label": "propose_refund.output != null" },
+          { "id": "true", "label": "true" }
+        ]
+      }
+    ],
+    "correctAnswers": ["approval-type:ask-question", "approval-condition:approved"]
+  },
+  {
+    "id": "q12",
+    "number": 12,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have an Azure Speech in Foundry Tools resource that hosts a custom speech to text model deployed to a custom endpoint. An agent uses the endpoint to perform real-time speech recognition.\nYou are approaching the expiration date of the custom speech to text model.\nWhat is the expected behavior when the model expires?",
+    "options": [
+      { "id": "a", "label": "A. Speech recognition requests will return a 4xx error until a new custom model is deployed." },
+      { "id": "b", "label": "B. Speech recognition requests will continue to use the expired custom model until the model is removed manually." },
+      { "id": "c", "label": "C. Speech recognition requests will fall back to the most recent base model for the same locale." },
+      { "id": "d", "label": "D. The custom model will be deleted automatically when the model expires." }
+    ],
+    "correctAnswers": ["c"]
+  },
+  {
+    "id": "q13",
+    "number": 13,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a Microsoft Foundry project that contains a model deployment.\nYou have an application that calls the deployment by using the Azure OpenAI v1 API and DefaultAzureCredential.\nThe developers at your company receive HTTP 403 errors when they send inference requests, even after running az login.\nWhich role-based access control (RBAC) role should you assign to the developers?",
+    "options": [
+      { "id": "a", "label": "A. Cognitive Services User" },
+      { "id": "b", "label": "B. Cognitive Services OpenAI User" },
+      { "id": "c", "label": "C. Contributor" },
+      { "id": "d", "label": "D. Cognitive Services Data Reader" }
+    ],
+    "correctAnswers": ["b"]
+  },
+  {
+    "id": "q14",
+    "number": 14,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a Microsoft Foundry project that contains an agent. The agent has a Model Context Protocol (MCP) tool that queries a knowledge base stored in Azure AI Search.\nYou are provided with the following code snippet that runs the agent.\nYou need to add the correct tool_choice parameter to the code to deterministically force the agent to invoke the MCP tool on each run.\nWhat should you add?",
+    "code": "run = project_client.agents.runs.create_and_process(\n    thread_id=thread.id,\n    agent_id=agent.id\n)",
+    "options": [
+      { "id": "a", "label": "A. tool_choice=(\"required\")" },
+      { "id": "b", "label": "B. tool_choice=(\"auto\")" },
+      { "id": "c", "label": "C. tool_choice=('type:\"knowledge_base\")" },
+      { "id": "d", "label": "D. tool_choice =(\"type\":\"mcp)" }
+    ],
+    "correctAnswers": ["a"]
+  },
+  {
+    "id": "q15",
+    "number": 15,
+    "type": "Drag and Drop",
+    "questionType": "drag-drop",
+    "question": "DRAG DROP.\nYou have a Microsoft Foundry project that contains a customer support agent grounded in internal documentation.\nAfter a recent update, users report the following issues:\nSome answers are unsupported by retrieved documents.\nA small number of responses are flagged for policy violations.\nYou need to evaluate each issue.\nWhich observability signals should you use for each issue? To answer, drag the appropriate observability signals to the correct issues. Each observability signal may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\nNOTE: Each correct selection is worth one point.",
+    "sourceLabel": "Observability signals",
+    "configurations": [
+      { "id": "groundedness", "label": "Groundedness evaluation metrics" },
+      { "id": "latency", "label": "Latency breakdown traces" },
+      { "id": "risk-safety", "label": "Risk and safety metrics" },
+      { "id": "token-usage", "label": "Token usage analytics" }
+    ],
+    "pipelines": [
+      { "id": "unsupported-responses", "label": "Unsupported responses" },
+      { "id": "policy-violations", "label": "Policy violations" }
+    ],
+    "correctAnswers": ["unsupported-responses:groundedness", "policy-violations:risk-safety"]
+  },
+  {
+    "id": "q16",
+    "number": 16,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a Microsoft Foundry project named Project1 that contains an agent. The agent uses an OpenAPI 3.0 specification to call an external weather service.\nThe weather service requires a key to be passed in an HTTP header. The key value is stored as a connection in Project1.\nYou need to ensure that the key value from the connection is included automatically whenever the OpenAPI tool is invoked.\nWhat should you configure in the OpenAPI specification?",
+    "options": [
+      { "id": "a", "label": "A. a header parameter defined for each operation" },
+      { "id": "b", "label": "B. an Azure Key Vault connection" },
+      { "id": "c", "label": "C. an API key security scheme" },
+      { "id": "d", "label": "D. a Bearer token security scheme" }
+    ],
+    "correctAnswers": ["c"]
+  },
+  {
+    "id": "q17",
+    "number": 17,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a Microsoft Foundry project that serves a high-volume chat app.\nMost requests are simple FAQs, but some require advanced reasoning.\nYou need to reduce costs and latency for common queries, without degrading the quality of the responses to complex questions.\nWhat should you do?",
+    "options": [
+      { "id": "a", "label": "A. Route all the requests to a smaller model." },
+      { "id": "b", "label": "B. Use a model cascade that routes the requests to different models." },
+      { "id": "c", "label": "C. Increase the value of the max_tokens parameter for all the requests." },
+      { "id": "d", "label": "D. Route all the requests to the most capable model." }
+    ],
+    "correctAnswers": ["b"]
+  },
+  {
+    "id": "q18",
+    "number": 18,
+    "type": "Hotspot",
+    "questionType": "multi-dropdown",
+    "question": "HOTSPOT-\nYou have a Microsoft Foundry project that contains an internal Q&A agent.\nUsers report the following issues when they ask the agent questions:\nAn increase in the following response: \"No relevant information found\"\nPeriodic HTTP 429 rate limit exceeded errors during peak hours\nYou need to identify whether each issue is caused by model unavailability, resource limits, or inference failures.\nWhat should you do? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
+    "answerFields": [
+      {
+        "id": "metrics-to-enable",
+        "label": "Metrics to enable",
+        "options": [
+          { "id": "availability-provisioned", "label": "Model Availability Rate and Provisioned Utilization" },
+          { "id": "cache-match", "label": "Only Tokens CacheMatch Rate" },
+          { "id": "requests-200", "label": "Only Total Requests filtered to status code 200" },
+          { "id": "response-time-tokens", "label": "Time To Response and Total Tokens" }
+        ]
+      },
+      {
+        "id": "diagnostic-log",
+        "label": "Diagnostic log to collect",
+        "options": [
+          { "id": "ai-metrics", "label": "AIMetrics" },
+          { "id": "audit", "label": "audit" },
+          { "id": "request-response", "label": "RequestResponse" },
+          { "id": "trace", "label": "trace" }
+        ]
+      }
+    ],
+    "correctAnswers": ["metrics-to-enable:availability-provisioned", "diagnostic-log:request-response"]
+  },
+  {
+    "id": "q19",
+    "number": 19,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a Microsoft Foundry project that contains a high-traffic agent.\nAfter a recent update, operational costs increase significantly.\nMonitoring confirms that the volume of user traffic to the agent remains unchanged.\nYou suspect that changes to the request or response characteristics are causing the increase. You need to identify whether the additional costs are driven by the model input size, the model output size, or expanded tool usage.\nWhich observability capability should you use?",
+    "options": [
+      { "id": "a", "label": "A. latency" },
+      { "id": "b", "label": "B. evaluation metrics" },
+      { "id": "c", "label": "C. run success rate" },
+      { "id": "d", "label": "D. token usage" }
+    ],
+    "correctAnswers": ["d"]
+  },
+  {
+    "id": "q20",
+    "number": 20,
+    "type": "Hotspot",
+    "questionType": "multi-dropdown",
+    "question": "HOTSPOT-\nYou have a Microsoft Foundry project that contains an agent.\nThe agent uses tools to retrieve internal content and call external APIs. The agent is configured to let the model decide when to call the tools.\nYou need to publish the agent for a compliance workflow. The solution must meet the following requirements:\nEach workflow run must include a retrieval step before generating a response.\nTool calls must authenticate by using the published agent's own identity.\nTool access must use an identity isolated from other project resources.\nTool access must use support audit tracing.\nWhat should you do? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
+    "answerFields": [
+      {
+        "id": "tool-choice",
+        "label": "Set tool_choice to",
+        "options": [
+          { "id": "auto", "label": "auto" },
+          { "id": "none", "label": "none" },
+          { "id": "required", "label": "required" }
+        ]
+      },
+      {
+        "id": "tool-authentication",
+        "label": "Configure the tool to authenticate by",
+        "options": [
+          { "id": "api-key-prompt", "label": "Storing API keys in prompts" },
+          { "id": "shared-agent-identity", "label": "Using the shared project agent identity" },
+          { "id": "distinct-agent-identity", "label": "Using a distinct agent identity bound to the client application" }
+        ]
+      }
+    ],
+    "correctAnswers": ["tool-choice:required", "tool-authentication:distinct-agent-identity"]
+  }
+]

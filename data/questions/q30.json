@@ -1,0 +1,32 @@
+[
+  {
+    "id": "q30",
+    "number": 30,
+    "type": "Drag and Drop",
+    "questionType": "drag-drop",
+    "question": "DRAG DROP -\nYou have a Microsoft Foundry project that contains a deployed ticket-triage agent.\nYou discover that sometimes the agent responds without calling any tools, even when a tool is required.\nYou need to ensure that the agent calls a tool during execution.\nHow should you complete the Python code? To answer, drag the appropriate values to the correct targets. Each value may be used once, more than once, or not at all. You may need to drag the split bar between panes or scroll to view content.\nNOTE: Each correct selection is worth one point.",
+    "sourceLabel": "Values",
+    "targetLabel": "Answer Area",
+    "configurations": [
+      { "id": "auto", "label": "\"auto\"" },
+      { "id": "required", "label": "\"required\"" },
+      { "id": "response_format", "label": "\"response_format\"" },
+      { "id": "tool_choice", "label": "\"tool_choice\"" },
+      { "id": "tools", "label": "\"tools\"" },
+      { "id": "type", "label": "\"type\"" }
+    ],
+    "dropFields": [
+      { "id": "property", "label": "Property", "placeholder": "Value" },
+      { "id": "setting", "label": "Setting", "placeholder": "Value" }
+    ],
+    "codeLines": [
+      "run_payload = {",
+      "  \"assistant_id\": agent_id,",
+      "  \"metadata\": {",
+      "    \"scenario\": \"ticket-triage\"",
+      "  }",
+      "}"
+    ],
+    "correctAnswers": ["property:tool_choice", "setting:required"]
+  }
+]

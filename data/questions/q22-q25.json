@@ -1,0 +1,52 @@
+[
+  {
+    "id": "q22",
+    "number": 22,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "Users report the following issues:\nSome requests take more than 15 seconds to complete.\nSome responses are incorrect, even when the knowledge API returns the expected data.\nYou need to inspect individual agent runs to view the ordered sequence of large language model (LLM) calls, tool invocations, and timing information.\nWhich observability capability should you use?",
+    "options": [
+      { "id": "a", "label": "A. token usage" },
+      { "id": "b", "label": "B. monitoring" },
+      { "id": "c", "label": "C. safety metrics" },
+      { "id": "d", "label": "D. tracing" }
+    ],
+    "correctAnswers": ["d"]
+  },
+  {
+    "id": "q23",
+    "number": 23,
+    "type": "Yes/No",
+    "questionType": "single-choice",
+    "question": "Note: This section contains one or more sets of questions with the same scenario and problem. Each question presents a unique solution to the problem. You must determine whether the solution meets the stated goals. More than one solution in the set might solve the problem. It is also possible that none of the solutions in the set solve the problem.\nAfter you answer a question in this section, you will NOT be able to return. As a result, these questions do not appear on the Review Screen.\n\nYou discover that users can upload unsafe images and embed hidden instructions into images to manipulate the model.\nYou need to implement controls to mitigate the risk.\nSolution: You configure a prompt shield for user prompts.\nDoes this meet the goal?",
+    "options": [
+      { "id": "a", "label": "A. Yes" },
+      { "id": "b", "label": "B. No" }
+    ],
+    "correctAnswers": ["b"]
+  },
+  {
+    "id": "q24",
+    "number": 24,
+    "type": "Yes/No",
+    "questionType": "single-choice",
+    "question": "You need to implement controls to mitigate the risk.\nSolution: You configure image moderation to block unsafe content before processing the images.\nDoes this meet the goal?",
+    "options": [
+      { "id": "a", "label": "A. Yes" },
+      { "id": "b", "label": "B. No" }
+    ],
+    "correctAnswers": ["b"]
+  },
+  {
+    "id": "q25",
+    "number": 25,
+    "type": "Yes/No",
+    "questionType": "single-choice",
+    "question": "You discover that users can upload unsafe images and embed hidden instructions into images to manipulate the model.\nYou need to implement controls to mitigate the risk.\nSolution: You configure a prompt shield for documents.\nDoes this meet the goal?",
+    "options": [
+      { "id": "a", "label": "A. Yes" },
+      { "id": "b", "label": "B. No" }
+    ],
+    "correctAnswers": ["b"]
+  }
+]

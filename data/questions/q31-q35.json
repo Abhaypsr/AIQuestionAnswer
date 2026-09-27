@@ -1,0 +1,95 @@
+[
+  {
+    "id": "q31",
+    "number": 31,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You are building a web app named App1 that generates responses by using a model deployed to a Microsoft Foundry project named Project1. Before sending the prompts to the model, App1 must retrieve documents by using Azure AI Search. You need to integrate Project1 and App1. The solution must meet the following requirements:\nMultiple client applications must use the same search configuration.\nA security policy must prevent key-based authentication.\nAdministrative effort must be minimized.\nWhat should you do?",
+    "options": [
+      { "id": "a", "label": "A. Create a custom HTTP connection in Foundry and manually configure Azure AI Search endpoints per application." },
+      { "id": "b", "label": "B. Configure an Azure AI Search connection in Project1 and reference the connection in each application." },
+      { "id": "c", "label": "C. Call Azure AI Search directly from each application by using Microsoft Entra authentication." },
+      { "id": "d", "label": "D. Enable a managed identity for each application and call Azure AI Search directly." }
+    ],
+    "correctAnswers": ["b"]
+  },
+  {
+    "id": "q32",
+    "number": 32,
+    "type": "Drag and Drop",
+    "questionType": "drag-drop",
+    "question": "You need to enable an agent to use web search, execute code, and access file content. Which capabilities should you include? To answer, drag the appropriate capabilities to the correct answer area. Each capability may be used once or not at all.",
+    "sourceLabel": "Capabilities",
+    "targetLabel": "Answer Area",
+    "configurations": [
+      { "id": "bing-search", "label": "Grounding with Bing Search" },
+      { "id": "code-interpreter", "label": "Code Interpreter" },
+      { "id": "file-search", "label": "File Search" },
+      { "id": "azure-ai-search", "label": "Azure AI Search indexing only" },
+      { "id": "prompt-templates", "label": "Static prompt templates only" }
+    ],
+    "pipelines": [
+      { "id": "web-search", "label": "Web search" },
+      { "id": "code", "label": "Code execution" },
+      { "id": "files", "label": "File access" }
+    ],
+    "correctAnswers": ["web-search:bing-search", "code:code-interpreter", "files:file-search"]
+  },
+  {
+    "id": "q33",
+    "number": 33,
+    "type": "Multiple Choice",
+    "questionType": "multi-select",
+    "question": "You have a Microsoft Foundry project that contains a prompt agent used by a customer support web app.\nThe agent is invoked from a Python service that does NOT run in the Foundry portal.\nYou need to implement end-to-end tracing to capture latency breakdowns and exceptions across agent runs.\nWhich two components can you use?\nEach correct answer presents a complete solution.\nNOTE: Each correct selection is worth one point.",
+    "options": [
+      { "id": "a", "label": "A. A log Analytics workspace" },
+      { "id": "b", "label": "B. Application Insights" },
+      { "id": "c", "label": "C. OpenTelemetry" },
+      { "id": "d", "label": "D. The Azure Monitor Agent" },
+      { "id": "e", "label": "E. Microsoft Sentinel" }
+    ],
+    "correctAnswers": ["b", "c"]
+  },
+  {
+    "id": "q34",
+    "number": 34,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a customer support agent that uses the Microsoft Foundry Agent Service.\nSometimes, customers return to a session days later to continue the same support case, and the agent must resume with the full historical context. The agent must provide the following:\nMulti-turn continuity within the session\nCross-session continuity for the same case\nAccess to the full user interaction history, including user messages, agent messages, tool calls, and tool outputs\nYou need to ensure that the agent automatically reloads the complete history on each new turn.\nWhat should you do?",
+    "options": [
+      { "id": "a", "label": "A. Create and reuse a conversation by storing the conversation's ID and supplying the ID on subsequent requests." },
+      { "id": "b", "label": "B. Persist only the final model response stored in the client application and prepend the response to future prompts." },
+      { "id": "c", "label": "C. Enable memory summarization on the agent definition to persist the context automatically." }
+    ],
+    "correctAnswers": ["a"]
+  },
+  {
+    "id": "q35",
+    "number": 35,
+    "type": "Hotspot",
+    "questionType": "multi-dropdown",
+    "question": "You have a Microsoft Foundry project that contains a deployed chat model.\nYou have a Python service that sends API requests to the model. The service is integrated with an automated validation system that compares generated outputs against approved response patterns.\nStakeholders report that small wording differences are causing validation mismatches.\nYou need to update the request parameters to improve output stability. The solution must maximize reasoning quality.\nHow should you complete the Python code? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
+    "code": "message = client.messages.create(\n    model=\"deployment-name\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Summarize the release notes in 3 bullet points.\"}\n    ],\n    max_tokens=800,\n    temperature=[temperature],\n    thinking={\"type\": \"enabled\"},\n    output_config={\"effort\": [effort]}\n)",
+    "answerFields": [
+      {
+        "id": "temperature",
+        "label": "temperature",
+        "options": [
+          { "id": "0", "label": "0" },
+          { "id": "1", "label": "1" },
+          { "id": "2", "label": "2" }
+        ]
+      },
+      {
+        "id": "effort",
+        "label": "output_config effort",
+        "options": [
+          { "id": "low", "label": "low" },
+          { "id": "medium", "label": "medium" },
+          { "id": "high", "label": "high" }
+        ]
+      }
+    ],
+    "correctAnswers": ["temperature:1", "effort:high"]
+  }
+]

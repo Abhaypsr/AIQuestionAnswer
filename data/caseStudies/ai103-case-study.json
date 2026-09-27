@@ -1,0 +1,148 @@
+{
+  "course": "AI-103",
+  "title": "Contoso Agent Case Study",
+  "summary": "This is a case study. Case studies are not timed separately from other exam sections. You can use as much exam time as you would like to complete each case study. However, there might be additional case studies or other exam sections.",
+  "sections": [
+    {
+      "heading": "Instructions",
+      "content": "Case studies are not timed separately from other exam sections. You can use as much exam time as you would like to complete each case study. However, there might be additional case studies or other exam sections. Manage your time so you can complete all exam sections in the time provided. Pay attention to the Exam Progress area at the top of the screen. To answer the case study questions, you will need to reference information provided in the case. Case studies and associated questions might contain exhibits or other resources that provide more information about the scenario described in the case. Information provided in an individual question does not apply to the other questions in the case study. A Review Screen will appear at the end of this case study. From the Review Screen, you can review and change your answers before you move to the next exam section. After you leave this case study, you will NOT be able to return to it."
+    },
+    {
+      "heading": "Overview",
+      "content": "Company Information: Contoso, Ltd is a multinational retail company that builds, deploys, and manages generative AI and agent-based solutions by using Microsoft Foundry."
+    },
+    {
+      "heading": "Existing Environment - Identity Environment",
+      "content": "Contoso uses Microsoft Entra ID for identity management, authentication, and authorization capabilities that enable agents to access organizational resources and services. Contoso recently formed a new AI engineering team named Agent1Dev Team to optimize and maintain existing AI solutions. The team collaborates with solution architects, DevOps engineers, and security engineers to design, implement, monitor, and secure AI applications. Contoso also has a team named Agent1Test Team that is responsible for validating AI solutions before the solution deployments."
+    },
+    {
+      "heading": "Generative Environment",
+      "content": "Contoso has a Microsoft Foundry deployment that contains two projects named Project1 and Project2. Project1 contains a customer support agent named Agent1 that assists customers with product inquiries and troubleshooting requests. Agent1 has the following configurations: Agent1 uses a base model deployment. A safety evaluation pipeline is NOT enabled. Tool invocation approval workflows are NOT enabled. Conversation memory constraints are NOT configured. Agent1 interacts with customers by using digital support channels and answers general questions about Contoso products. Project1 is deployed to an Azure region located in the European Union (EU). Agent1Dev Team will use Project1 to optimize and maintain Agent1. Project2 contains a deployed video generation model. The marketing department at Contoso has access to Project2 and plans to use the model to develop a video creation solution. Development of the solution is incomplete."
+    },
+    {
+      "heading": "Data Environment",
+      "content": "Contoso stores product-related information in Azure resources that support AI applications. The Azure environment contains an Azure Blob Storage account named storage1 that stores product detail sheets for all the Contoso products. The product sheets include specifications, feature descriptions, and product support information that Agent1 can use to answer customer questions. The product sheets are stored in the PDF format."
+    },
+    {
+      "heading": "Problem Statements",
+      "content": "Contoso identifies the following issues: Agent1 has only general knowledge of the Contoso products. A recent chat interaction with Agent1 was analyzed for sentiment. The results of the analysis have NOT been processed yet. Agent1 does NOT use the detailed product information in the product sheets stored in storage1 when responding to customer questions. The finance department at Contoso reports that vendor invoices must be reviewed manually to ensure that the invoices match the terms defined in the vendor contracts. The invoices contain tables, logos, and varied layouts that make the documents difficult to process consistently."
+    },
+    {
+      "heading": "Planned Changes",
+      "content": "Contoso plans to implement the following changes: Implement a solution for Project1 that analyzes the vendor invoices by evaluating both the visual layout and the textual content of the invoices, so that the invoice details can be verified against the vendor contract terms. Update the base model deployment used by Agent1 and standardize the model version to ensure continuity and consistent responses. Enable Agent1 to retrieve and use the detailed product information from the product sheets stored in storage1. Implement an indexing solution for the product sheets that Agent1 can use to answer customer questions. Complete the development of the video creation solution."
+    },
+    {
+      "heading": "Technical Requirements",
+      "content": "The model deployment used by Agent1 must support scalable, high-throughput generative AI workloads and dynamically scale to handle variable customer support traffic, without requiring reserved throughput capacity. The product sheets must be processed by using an indexing pipeline that enables semantic and vector search, so that Agent1 can retrieve the relevant product information. Responses generated by using the product sheet information must be relevant, complete, and accurate. Agent1 must be able to use the product sheets to answer natural language questions about product details. The model version used by Agent1 must remain consistent to ensure stable responses. The data processed by the model must remain within the EU."
+    },
+    {
+      "heading": "Security and Compliance Requirements",
+      "content": "API keys must NOT be used to access Foundry-deployed models. Access to the Azure resources must follow the principle of least privilege. The developers at Contoso must authenticate to Microsoft Foundry resources by using Microsoft Entra authentication. Access to Project1 must be assigned to the members of Agent1Dev Team by using a security group named SC_Agent1_Dev. Access to Project1 must be assigned to the members of Agent1Test Team by using a security group named SC_Agent1_Test. Agent1 must never reveal customer information, even if a document that contains customer data is added erroneously to the product sheet repository in storage1. The product sheets might contain images that include embedded text. Agent1 must be protected from malicious instructions potentially hidden within the images."
+    },
+    {
+      "heading": "Business Requirements",
+      "content": "Users that interact with Agent1 must have a personalized experience in future interactions, including the ability for Agent1 to retain conversation context and recall relevant information from previous interactions. Agent1 must answer questions only about the products sold by Contoso."
+    }
+  ],
+  "questions": [
+    {
+      "id": "case-q1",
+      "number": 1,
+      "type": "Case Study",
+      "questionType": "multi-dropdown",
+      "question": "You need to configure the model deployment for Agent1 to meet the technical requirements. What should you configure? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.",
+      "answerFields": [
+        {
+          "id": "deployment-type",
+          "label": "Deployment type",
+          "options": [
+            { "id": "standard", "label": "Standard" },
+            { "id": "global-standard", "label": "Global Standard" },
+            { "id": "global-provisioned", "label": "Global Provisioned" }
+          ]
+        },
+        {
+          "id": "version-update-policy",
+          "label": "Version update policy",
+          "options": [
+            { "id": "current-version-expires", "label": "Once the current version expires" },
+            { "id": "opt-out-automatic-upgrades", "label": "Opt out of automatic model version upgrades" },
+            { "id": "upgrade-new-default", "label": "Upgrade once a new default version becomes available" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-q2",
+      "number": 2,
+      "type": "Case Study",
+      "questionType": "single-choice",
+      "question": "You need to configure Agent1 to meet the security and compliance requirements. What should you use?",
+      "options": [
+        { "id": "a", "label": "A. self-harm content filtering" },
+        { "id": "b", "label": "B. prompt shields" },
+        { "id": "c", "label": "C. Personally identifiable information (PII) Detection" },
+        { "id": "d", "label": "D. violence content filtering" }
+      ],
+      "correctAnswers": ["c"]
+    },
+    {
+      "id": "case-q28",
+      "number": 3,
+      "type": "Case Study",
+      "questionType": "single-choice",
+      "question": "You need to configure Agent1 to answer customer questions about only the Contoso products. The solution must meet the business requirements.\nWhat should you do?",
+      "options": [
+        { "id": "a", "label": "A. Modify the system message instructions." },
+        { "id": "b", "label": "B. Add few-shot examples." },
+        { "id": "c", "label": "C. Apply top-p sampling." },
+        { "id": "d", "label": "D. Increase the value of the temperature parameter." }
+      ],
+      "correctAnswers": ["a"]
+    },
+    {
+      "id": "case-q56",
+      "number": 4,
+      "type": "Case Study",
+      "questionType": "single-choice",
+      "question": "You need to recommend an invoice review solution that resolves the issue reported by the finance department.\nWhat should you include in the recommendation?",
+      "options": [
+        { "id": "a", "label": "A. chat completions" },
+        { "id": "b", "label": "B. Azure Document Intelligence in Foundry Tools" },
+        { "id": "c", "label": "C. Azure Content Understanding in Foundry Tools" },
+        { "id": "d", "label": "D. Image Analysis" }
+      ],
+      "correctAnswers": ["c"]
+    },
+    {
+      "id": "case-q61",
+      "number": 5,
+      "type": "Case Study",
+      "questionType": "multi-select",
+      "question": "You need to configure an indexing pipeline for Agent1 to retrieve the relevant product information in storage1. The solution must meet the technical requirement.\nWhich two built-in skills should you use? Each correct answer presents part of the solution.\nNOTE: Each correct selection is worth one point.",
+      "options": [
+        { "id": "a", "label": "A. Azure OpenAI Embedding" },
+        { "id": "b", "label": "B. Entity Recognition" },
+        { "id": "c", "label": "C. Text Split" },
+        { "id": "d", "label": "D. Merge" },
+        { "id": "e", "label": "E. Language Detection" },
+        { "id": "f", "label": "F. key phrase extraction" }
+      ],
+      "correctAnswers": ["a", "c"]
+    },
+    {
+      "id": "case-q62",
+      "number": 6,
+      "type": "Case Study",
+      "questionType": "single-choice",
+      "question": "You need to recommend a solution to support the planned changes and technical requirements for Agent1 to use the product information stored in storage1.\nWhat should you include in the recommendation?",
+      "options": [
+        { "id": "a", "label": "A. Azure Translator in Foundry Tools" },
+        { "id": "b", "label": "B. Grounding with Bing Search" },
+        { "id": "c", "label": "C. Azure AI Search" },
+        { "id": "d", "label": "D. Azure Document intelligence in Foundry Tools" }
+      ],
+      "correctAnswers": ["c"]
+    }
+  ]
+}

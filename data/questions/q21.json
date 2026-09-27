@@ -1,0 +1,16 @@
+[
+  {
+    "id": "q21",
+    "number": 21,
+    "type": "Multiple Choice",
+    "questionType": "single-choice",
+    "question": "You have a Microsoft Foundry project named Project1 that contains the following:\nAn OpenAPI tool that calls an external API\nA project connection named Connection1 that stores the API key of the external API\nWhen an agent calls the OpenAPI tool, the API returns a 401 unauthorized error, and traces show that the API key header is NOT being sent.\n\nYou need to ensure that the OpenAPI tool automatically includes the API key from Connection1 on all requests.\nWhat should you do?",
+    "options": [
+      { "id": "a", "label": "A. Enable identity passthrough so that the tool uses the Microsoft Entra token of the caller." },
+      { "id": "b", "label": "B. Add the API key header manually to the OpenAPI specification." },
+      { "id": "c", "label": "C. Configure the tool to use the default connection of Project1." },
+      { "id": "d", "label": "D. Connect the tool to Connection1." }
+    ],
+    "correctAnswers": ["d"]
+  }
+]
