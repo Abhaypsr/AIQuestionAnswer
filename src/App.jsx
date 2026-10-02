@@ -10,11 +10,16 @@ import questionBatch36 from '../data/questions/q36-q70.json';
 import extractedQuestions from '../PDF/Q69_Q117_extracted.json';
 import caseStudy from '../data/caseStudies/ai103-case-study.json';
 import { adaptExtractedQuestions } from '../data/questions/adaptExtractedQuestions';
+import { notes } from './notes';
 
 const PAGE_SIZE = 10;
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 function readRoute() {
+  if (/\/AI103\/notes\/?$/i.test(window.location.pathname)) {
+    return { screen: 'notes', page: 0 };
+  }
+
   const pageMatch = window.location.pathname.match(/\/AI103\/(\d+)\/?$/i);
   if (pageMatch) {
     return { screen: 'course', page: Math.max(0, Number(pageMatch[1]) - 1) };
@@ -28,6 +33,7 @@ function readRoute() {
 }
 
 const ai103Path = (pageNumber) => `${basePath}/AI103/${pageNumber}`;
+const ai103NotesPath = `${basePath}/AI103/notes`;
 const homePath = import.meta.env.BASE_URL || '/';
 
 function App() {
@@ -83,6 +89,12 @@ function App() {
   const openAI901 = () => {
     setRoute({ screen: 'upcoming', page: 0 });
     window.history.pushState({}, '', `${basePath}/AI901` || '/AI901');
+  };
+
+  const openNotes = () => {
+    setRoute({ screen: 'notes', page: 0 });
+    window.history.pushState({}, '', ai103NotesPath);
+    window.scrollTo(0, 0);
   };
 
   const goHome = () => {
@@ -588,7 +600,7 @@ function App() {
     <div className="app-shell">
       <header className="topbar">
         <button className="brand" type="button" onClick={goHome}>Exam Questions</button>
-        {screen === 'course' && <div className="course-badge">AI-103</div>}
+        {(screen === 'course' || screen === 'notes') && <div className="course-badge">AI-103</div>}
       </header>
 
       <main className="content">
@@ -628,10 +640,37 @@ function App() {
           </section>
         )}
 
+        {screen === 'notes' && (
+          <section className="notes-page">
+            <nav className="course-toolbar" aria-label="AI-103 navigation">
+              <button className="back-link" type="button" onClick={goHome}>All exams</button>
+              <button className="back-link" type="button" onClick={openAI103}>AI-103 Questions</button>
+            </nav>
+            <div className="page-header">
+              <h1>AI-103 Notes</h1>
+              <p>Download the course documents.</p>
+            </div>
+            <div className="notes-list">
+              {notes.map((note) => (
+                <article className="note-row" key={note.name}>
+                  <div className="note-details">
+                    <span className="note-type">Word document</span>
+                    <h2>{note.name}</h2>
+                  </div>
+                  <a className="note-download" href={note.url} download={note.name}>
+                    Download
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
         {screen === 'course' && (
           <>
             <nav className="course-toolbar" aria-label="Course navigation">
               <button className="back-link" type="button" onClick={goHome}>All exams</button>
+              <button className="back-link" type="button" onClick={openNotes}>Notes</button>
               <div className="view-tabs">
                 <button
                   type="button"

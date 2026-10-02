@@ -199,6 +199,51 @@ button, select {
   margin: 0 auto;
 }
 
+.notes-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.notes-list {
+  border-top: 1px solid var(--border);
+}
+
+.note-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.note-details h2 {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.note-type {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.note-download {
+  flex: 0 0 auto;
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.note-download:hover,
+.note-download:focus-visible {
+  background: #eef5ff;
+}
+
 .questions-stack {
   display: flex;
   flex-direction: column;
@@ -661,6 +706,10 @@ button, select {
   .course-toolbar {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .note-row {
+    align-items: flex-start;
   }
 
   .view-tabs {
