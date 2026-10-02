@@ -55,4 +55,4 @@ jobs:
           app-name: 'AIExamQuestion'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F7F67DAA4848491F8BBB8B4E933E641A }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_67938B498E864B7FB84A3F0770866FF0 }}
