@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { questions } from '../data/questions';
 import questionBatch from '../data/questions/q6-q20.json';
 import question21 from '../data/questions/q21.json';
@@ -44,6 +44,7 @@ function App() {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [submitted, setSubmitted] = useState({});
   const [pendingConfiguration, setPendingConfiguration] = useState('');
+  const lastTrackedPageView = useRef('');
 
   const regularQuestions = useMemo(
     () => [
@@ -101,11 +102,24 @@ function App() {
       properties.course = 'AI-901';
     }
 
-    trackPageView({
+    const pageView = {
       name: pageViewName,
       uri: `${window.location.origin}${window.location.pathname}`,
       properties
-    });
+    };
+    const pageViewKey = `${pageView.name}|${pageView.uri}`;
+
+    if (lastTrackedPageView.current !== pageViewKey) {
+      trackPageView(pageView);
+      lastTrackedPageView.current = pageViewKey;
+    }
+
+    const handlePageShow = (event) => {
+      if (event.persisted) trackPageView(pageView);
+    };
+
+    window.addEventListener('pageshow', handlePageShow);
+    return () => window.removeEventListener('pageshow', handlePageShow);
   }, [page, screen, view]);
 
   const openAI103 = () => {

@@ -10,16 +10,10 @@ const applicationInsights = connectionString
     })
   : null;
 
-let lastPageViewKey = '';
-
 applicationInsights?.loadAppInsights();
 
 export function trackPageView({ name, uri, properties }) {
   if (!applicationInsights) return;
-
-  const pageViewKey = `${name}|${uri}`;
-  if (pageViewKey === lastPageViewKey) return;
-  lastPageViewKey = pageViewKey;
 
   applicationInsights.trackPageView({ name, uri, properties });
   applicationInsights.trackTrace({
