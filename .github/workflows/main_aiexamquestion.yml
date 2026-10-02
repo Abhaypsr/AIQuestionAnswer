@@ -25,15 +25,18 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+          npm ci
+          npm run build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: node-app
-          path: .
+          name: app-service-package
+          path: |
+            dist/
+            package.json
+            server.js
+          if-no-files-found: error
 
   deploy:
     runs-on: ubuntu-latest
@@ -43,7 +46,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: node-app
+          name: app-service-package
       
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
