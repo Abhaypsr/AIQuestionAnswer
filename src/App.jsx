@@ -11,6 +11,7 @@ import extractedQuestions from '../PDF/Q69_Q117_extracted.json';
 import caseStudy from '../data/caseStudies/ai103-case-study.json';
 import { adaptExtractedQuestions } from '../data/questions/adaptExtractedQuestions';
 import { notes } from './notes';
+import { trackPageView } from './telemetry';
 
 const PAGE_SIZE = 10;
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -79,6 +80,33 @@ function App() {
     window.addEventListener('popstate', syncRoute);
     return () => window.removeEventListener('popstate', syncRoute);
   }, [totalPages]);
+
+  useEffect(() => {
+    const section = screen === 'course' ? view : screen;
+    const pageViewName = screen === 'course'
+      ? view === 'questions'
+        ? `AI-103 Questions - Page ${page + 1}`
+        : 'AI-103 Case Study'
+      : screen === 'upcoming'
+        ? 'AI-901 Upcoming'
+        : screen === 'notes'
+          ? 'AI-103 Notes'
+          : 'Exam Portal Home';
+    const properties = { screen, section };
+
+    if (screen === 'course') {
+      properties.course = 'AI-103';
+      if (view === 'questions') properties.questionPage = String(page + 1);
+    } else if (screen === 'upcoming') {
+      properties.course = 'AI-901';
+    }
+
+    trackPageView({
+      name: pageViewName,
+      uri: `${window.location.origin}${window.location.pathname}`,
+      properties
+    });
+  }, [page, screen, view]);
 
   const openAI103 = () => {
     setRoute({ screen: 'course', page: 0 });

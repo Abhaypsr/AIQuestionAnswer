@@ -34,6 +34,18 @@ createServer((request, response) => {
     return;
   }
 
+  if (pathname === '/app-config.js') {
+    const clientConfig = JSON.stringify({
+      applicationInsightsConnectionString: process.env.APPLICATIONINSIGHTS_CONNECTION_STRING || ''
+    });
+    response.writeHead(200, {
+      'Cache-Control': 'no-store',
+      'Content-Type': 'text/javascript; charset=utf-8'
+    });
+    response.end(`window.APP_CONFIG = ${clientConfig};`);
+    return;
+  }
+
   const requestedFile = resolve(staticRoot, `.${pathname}`);
   if (requestedFile !== staticRoot && !requestedFile.startsWith(`${staticRoot}${sep}`)) {
     response.writeHead(404).end();
