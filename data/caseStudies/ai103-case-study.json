@@ -70,6 +70,10 @@
             { "id": "upgrade-new-default", "label": "Upgrade once a new default version becomes available" }
           ]
         }
+      ],
+      "correctAnswers": [
+        "deployment-type:standard",
+        "version-update-policy:opt-out-automatic-upgrades"
       ]
     },
     {
