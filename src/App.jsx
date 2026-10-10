@@ -57,7 +57,9 @@ function App() {
       ...questionBatch31,
       ...questionBatch36.filter((question) => question.number < 69),
       ...adaptExtractedQuestions(extractedQuestions)
-    ].filter((question) => question.number > 2),
+    ]
+      .filter((question) => question.number > 2)
+      .map((question, index) => ({ ...question, number: index + 1 })),
     []
   );
   const totalPages = Math.ceil(regularQuestions.length / PAGE_SIZE);
