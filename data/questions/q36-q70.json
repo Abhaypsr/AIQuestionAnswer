@@ -4,7 +4,7 @@
         "number":  36,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a chat app in a Microsoft Foundry project and an Azure AI Search vectorized index.\nYou need to connect to the index to meet the following requirements:\nâ€¢ Complex questions must retrieve information from multiple chunks.\nâ€¢ Multi-turn conversations must influence retrieval planning.\nâ€¢ Retrievals must run in parallel to reduce latency.\nWhich retrieval approach should you use?",
+        "question":  "You have a chat app in a Microsoft Foundry project and an Azure AI Search vectorized index.\nYou need to connect to the index to meet the following requirements:\nComplex questions must retrieve information from multiple chunks.\nMulti-turn conversations must influence retrieval planning.\nRetrievals must run in parallel to reduce latency.\nWhich retrieval approach should you use?",
         "options":  [
                         {
                             "id":  "a",
@@ -32,7 +32,7 @@
         "number":  37,
         "type":  "Hotspot",
         "questionType":  "multi-dropdown",
-        "question":  "You need to recommend a plan to create a customer support agent by using the Microsoft Foundry Agent Service. The agent must meet the following requirements:\nâ€¢ Retain user preferences across multiple conversations.\nâ€¢ Enable users to provide contextual grounding by directly uploading documents during a chat.\nWhich Foundry capability should you recommend for each requirement? To answer, select the appropriate options in the answer area.",
+        "question":  "You need to recommend a plan to create a customer support agent by using the Microsoft Foundry Agent Service. The agent must meet the following requirements:\nRetain user preferences across multiple conversations.\nEnable users to provide contextual grounding by directly uploading documents during a chat.\nWhich Foundry capability should you recommend for each requirement? To answer, select the appropriate options in the answer area.",
         "answerFields":  [
                              {
                                  "id":  "memory",
@@ -137,7 +137,7 @@
         "number":  40,
         "type":  "Hotspot",
         "questionType":  "multi-dropdown",
-        "question":  "You have a Microsoft Foundry project that contains an agent. You use a GitHub Actions workflow for CI/CD. If the evaluation results are NOT met, configure the workflow to fail. How should you configure the workflow?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nYou use a GitHub Actions workflow for CI/CD.\nYou need to configure the workflow to automatically evaluate the agent when a pull request (PR) is created and prevent branches from merging if the evaluation results do NOT meet the defined thresholds.\nHow should you configure the workflow? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
         "answerFields":  [
                              {
                                  "id":  "auth-method",
@@ -182,7 +182,7 @@
         "number":  41,
         "type":  "Yes/No",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents. Users report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content. You need to improve response completeness.\nSolution: You increase the value of the max_tokens parameter.\nDoes this meet the goal?",
+        "question":  "Note: This section contains one or more sets of questions with the same scenario and problem. Each question presents a unique solution to the problem. You must determine whether the solution meets the stated goals. More than one solution in the set might solve the problem. It is also possible that none of the solutions in the set solve the problem.\nAfter you answer a question in this section, you will NOT be able to return. As a result, these questions do not appear on the Review Screen.\n\nYou have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents.\nUsers report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content.\nYou need to improve response completeness.\nSolution: You increase the value of the max_tokens parameter.\nDoes this meet the goal?",
         "options":  [
                         {
                             "id":  "a",
@@ -202,7 +202,7 @@
         "number":  42,
         "type":  "Yes/No",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents. Users report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content. You need to improve response completeness.\nSolution: You add a reflection pass that regenerates the response if the required clauses are missing.\nDoes this meet the goal?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nThe agent generates summaries from retrieved policy documents.\nUsers report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content.\nYou need to improve response completeness.\nSolution: You add a reflection pass that regenerates the response if the required clauses are missing.\nDoes this meet the goal?",
         "options":  [
                         {
                             "id":  "a",
@@ -222,7 +222,7 @@
         "number":  43,
         "type":  "Yes/No",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents. Users report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content. You need to improve response completeness.\nSolution: You increase the value of the temperature parameter.\nDoes this meet the goal?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nThe agent generates summaries from retrieved policy documents.\nUsers report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content.\nYou need to improve response completeness.\nSolution: You increase the value of the temperature parameter.\nDoes this meet the goal?",
         "options":  [
                         {
                             "id":  "a",
@@ -242,7 +242,7 @@
         "number":  44,
         "type":  "Yes/No",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents. Users report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content. You need to improve response completeness.\nSolution: You run an evaluation flow that scores responses for completeness and blocks responses that fall below a defined threshold.\nDoes this meet the goal?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nThe agent generates summaries from retrieved policy documents.\nUsers report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content.\nYou need to improve response completeness.\nSolution: You run an evaluation flow that scores responses for completeness and blocks responses that fall below a defined threshold.\nDoes this meet the goal?",
         "options":  [
                         {
                             "id":  "a",
@@ -262,7 +262,7 @@
         "number":  45,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You are creating an image-editing workflow in a Microsoft Foundry project. The workflow must meet the following requirements:\nâ€¢ Ensure that background objects can be removed by applying a mask-based inpainting edit.\nâ€¢ Preserve the original lighting and style of the edited images.\nâ€¢ Use the built-in image editing controls, not a custom model.\nYou need to ensure that image edits apply exclusively inside the masked area. How should you configure the workflow?",
+        "question":  "You are creating an image-editing workflow in a Microsoft Foundry project.\nThe workflow must meet the following requirements:\nEnsure that background objects can be removed by applying a mask-based inpainting edit.\nPreserve the original lighting and style of the edited images.\nUse the built-in image editing controls, not a custom model.\nYou need to ensure that image edits apply exclusively inside the masked area.\nHow should you configure the workflow?",
         "options":  [
                         {
                             "id":  "a",
@@ -290,7 +290,7 @@
         "number":  46,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that generates product marketing images from text prompts. After publishing several images, the legal team at your company identifies a competitor\u0027s logo on a sign in the background of an image. You need to remove only the logo, while preserving the rest of the image. What should you do?",
+        "question":  "You have a Microsoft Foundry project that generates product marketing images from text prompts.\nAfter publishing several images, the legal team at your company identifies a competitor\u0027s logo on a sign in the background of an image.\nYou need to remove only the logo, while preserving the rest of the image.\nWhat should you do?",
         "options":  [
                         {
                             "id":  "a",
@@ -318,7 +318,7 @@
         "number":  47,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The agent ingests scanned PDF vendor invoices that contain tables and embedded QR codes. You plan to call Azure Content Understanding in Foundry Tools. You need to extract content and layout elements and detect QR codes without requiring a language model deployment. Which built-in analyzer should you use?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nThe agent ingests scanned PDF vendor invoices that contain tables and embedded QR codes.\nThe agent must preserve the PDF layout in the extracted output to ensure that downstream processing can reference sections and tables.\nYou plan to call Azure Content Understanding in Foundry Tools.\nYou need to extract content and layout elements and detect QR codes without requiring a language model deployment.\nWhich built-in analyzer should you use?",
         "options":  [
                         {
                             "id":  "a",
@@ -346,7 +346,7 @@
         "number":  48,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent and an image generation model deployment. The agent generates original images from user-supplied product photos. You need to ensure that the generated images maintain the product identity and visual characteristics of the provided photo. What should you do?",
+        "question":  "You have a Microsoft Foundry project that contains an agent and an image generation model deployment.\nThe agent generates original images from user-supplied product photos.\nYou need to ensure that the generated images maintain the product identity and visual characteristics of the provided photo.\nWhat should you do?",
         "options":  [
                         {
                             "id":  "a",
@@ -374,7 +374,7 @@
         "number":  49,
         "type":  "Hotspot",
         "questionType":  "multi-dropdown",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The agent accepts user-uploaded screenshots and uses a multimodal chat model. Some screenshots contain potentially malicious embedded text. You need to prevent a prompt injection attack and ensure that third-party content is treated as lower trust. How should you configure prompt shields for document attacks? To answer, select the appropriate options in the answer area. NOTE: Each correct selection is worth one point.",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nThe agent accepts user-uploaded screenshots and uses a multimodal chat model.\nSome screenshots contain potentially malicious embedded text.\nYou need to prevent a prompt injection attack and ensure that third-party content is treated as lower trust.\nHow should you configure prompt shields for document attacks? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
         "answerFields":  [
                              {
                                  "id":  "prompt-shield",
@@ -423,7 +423,7 @@
         "number":  50,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You are deploying a support agent that enables users to upload photos. You need to automatically classify uploaded images for harmful content. The solution must block content based on severity levels. What should you do?",
+        "question":  "You are deploying a support agent that enables users to upload photos.\nYou need to automatically classify uploaded images for harmful content.\nThe solution must block content based on severity levels.\nWhat should you do?",
         "options":  [
                         {
                             "id":  "a",
@@ -451,7 +451,7 @@
         "number":  51,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have an app named App1 that uses a Microsoft Foundry multimodal model deployment. App1 runs optical character recognition (OCR) on uploaded images and appends the OCR output to the prompt as additional context. Some uploaded images contain embedded text. You need to prevent potentially malicious instructions from being processed by the model. What should you use?",
+        "question":  "You have an app named App1 that uses a Microsoft Foundry multimodal model deployment.\nApp1 runs optical character recognition (OCR) on uploaded images and appends the OCR output to the prompt as additional context.\nSome uploaded images contain embedded text.\nYou need to prevent potentially malicious instructions from being processed by the model.\nWhat should you use?",
         "options":  [
                         {
                             "id":  "a",
@@ -479,7 +479,7 @@
         "number":  52,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. You need to process mixed-format documents that contain scanned text, tables, and multicolumn layouts. The extracted content must preserve the document structure and be converted into the Markdown format for downstream reasoning. What should you configure first?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nYou need to process mixed-format documents that contain scanned text, tables, and multicolumn layouts.\nThe extracted content must preserve the document structure and be converted into the Markdown format for downstream reasoning.\nWhat should you configure first?",
         "options":  [
                         {
                             "id":  "a",
@@ -507,7 +507,7 @@
         "number":  53,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have an application that processes scanned PDF invoices. The invoices have varied layouts and include multipage tables. You have a pipeline that uses optical character recognition (OCR) and extracts totals and invoice numbers. The results are often incorrect because the document structure is ignored. You need to implement a solution that provides OCR, layout analysis, and template-generalizing field extraction. The solution must not require training a custom model. The solution must minimize administrative effort. What should you include in the solution?",
+        "question":  "You have an application that processes scanned PDF invoices.\nThe invoices have varied layouts and include multipage tables.\nYou have a pipeline that uses optical character recognition (OCR) and extracts totals and invoice numbers.\nThe results are often incorrect because the document structure is ignored.\nYou need to implement a solution that provides OCR, layout analysis, and template-generalizing field extraction.\nThe solution must not require training a custom model.\nThe solution must minimize administrative effort.\nWhat should you include in the solution?",
         "options":  [
                         {
                             "id":  "a",
@@ -531,7 +531,7 @@
         "number":  54,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The agent uses a knowledge source built from documents stored in Azure Blob Storage. The documents include digitally scanned PDFs that contain multipage tables. You have an ingestion job that extracts only plain text, causing loss of table structure, headings, and page-number metadata. You need to configure an ingestion job for a Retrieval Augmented Generation (RAG) pipeline that performs OCR on scanned PDFs, preserves tables and headings as structure-aware chunks, and stores page-number metadata with each chunk. How should you configure the ingestion job?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nThe agent uses a knowledge source built from documents stored in Azure Blob Storage.\nThe documents include digitally scanned PDFs that contain multipage tables.\nYou have an ingestion job that extracts only plain text, causing loss of table structure, headings, and page-number metadata.\nYou need to configure an ingestion job for a Retrieval Augmented Generation (RAG) pipeline that performs OCR on scanned PDFs, preserves tables and headings as structure-aware chunks, and stores page-number metadata with each chunk.\nHow should you configure the ingestion job?",
         "options":  [
                         {
                             "id":  "a",
@@ -559,7 +559,7 @@
         "number":  55,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The agent uses Azure AI Search as the retriever. You plan to ingest PDF into an Azure AI Search index to ensure that the agent can ground responses in texts in both documents and embedded images. Users require citations that link to the source files. You need to ensure that during indexing, the images are extracted into a structure that can be used as input for the built-in OCR skill. Which indexing approach should you use?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nThe agent uses Azure AI Search as the retriever.\nYou plan to ingest PDF into an Azure AI Search index to ensure that the agent can ground responses in texts in both documents and embedded images.\nUsers require citations that link to the source files.\nYou need to ensure that during indexing, the images are extracted into a structure that can be used as input for the built-in OCR skill.\nWhich indexing approach should you use?",
         "options":  [
                         {
                             "id":  "a",
@@ -587,7 +587,7 @@
         "number":  56,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that contains an agent. The knowledge source for the agent is a set of scanned PDF troubleshooting guides stored in Azure Blob Storage. The guide pages contain two-column layouts and tables. You use Azure Content Understanding in Foundry Tools to process the PDFs. You plan to ingest the processed content into an index for Retrieval Augmented Generation (RAG) and store extracted fields for downstream automation. Stakeholders must be able to verify where each extracted field value came from in the original PDF and route low-reliability extractions for manual review. What should you do?",
+        "question":  "You have a Microsoft Foundry project that contains an agent.\nThe knowledge source for the agent is a set of scanned PDF troubleshooting guides stored in Azure Blob Storage.\nThe guide pages contain two-column layouts and tables.\nYou use Azure Content Understanding in Foundry Tools to process the PDFs.\nYou plan to ingest the processed content into an index for Retrieval Augmented Generation (RAG) and store extracted fields for downstream automation.\nStakeholders must be able to verify where each extracted field value came from in the original PDF and route low-reliability extractions for manual review.\nYou need to ensure that the Content Understanding document analyzer output includes a per-field confidence score and source grounding to locations within the source document.\nWhat should you do?",
         "options":  [
                         {
                             "id":  "a",
@@ -615,7 +615,7 @@
         "number":  57,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You are building a speech processing solution in Microsoft Foundry for a customer support platform. The platform will transcribe live phone calls so supervisors can view call transcripts and detect issues while calls are in progress. The call audio will arrive as a continuous stream from the telephony system. You need to ensure that the call transcripts appear within only a few seconds of the audio stream. What should you do?",
+        "question":  "You are building a speech processing solution in Microsoft Foundry for a customer support platform.\nThe platform will transcribe live phone calls so supervisors can view call transcripts and detect issues while calls are in progress.\nThe call audio will arrive as a continuous stream from the telephony system.\nYou need to ensure that the call transcripts appear within only a few seconds of the audio stream.\nWhat should you do?",
         "options":  [
                         {
                             "id":  "a",
@@ -643,7 +643,7 @@
         "number":  58,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You are creating an agent workflow in a Microsoft Foundry project to support natural voice interactions. The agent must receive continuous audio input, convert the input into text for reasoning, and then return spoken responses to a user. The workflow must meet the following requirements: support turn-taking dynamics, where the agent begins to generate the speech output before the user finishes speaking; operate with low latency to maintain conversational experience. You need to enable both speech to text and text to speech in a real-time agent interaction. What should you do?",
+        "question":  "You are creating an agent workflow in a Microsoft Foundry project to support natural voice interactions.\nThe agent must receive continuous audio input, convert the input into text for reasoning, and then return spoken responses to a user.\nThe workflow must meet the following requirements:\nSupport turn-taking dynamics, where the agent begins to generate the speech output before the user finishes speaking.\nOperate with low latency to maintain conversational experience.\nYou need to enable both speech to text and text to speech in a real-time agent interaction.\nWhat should you do?",
         "options":  [
                         {
                             "id":  "a",
@@ -671,7 +671,7 @@
         "number":  59,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have an application named App1 that uses Azure Speech in Foundry Tools to transcribe live calls. Transcript segments often contain both English and Spanish. App1 sends each segment to Azure Translator in Foundry Tools to translate to another language. Sometimes, mixed-language segments result in incomplete or incorrect translations. You need to reduce translation errors. The solution must ensure that the entire transcript is translated successfully. What should you do before sending the segments to Translator?",
+        "question":  "You have an application named App1 that uses Azure Speech in Foundry Tools to transcribe live calls.\nTranscript segments often contain both English and Spanish.\nApp1 sends each segment to Azure Translator in Foundry Tools to translate to another language.\nSometimes, mixed-language segments result in incomplete or incorrect translations.\nYou need to reduce translation errors.\nThe solution must ensure that the entire transcript is translated successfully.\nWhat should you do before sending the segments to Translator?",
         "options":  [
                         {
                             "id":  "a",
@@ -699,7 +699,7 @@
         "number":  60,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project named Project1. Project1 contains an application that processes PDF vendor invoices. You need to configure Azure Document Intelligence in Foundry Tools to generate a Markdown output that preserves the sections and table structure of the PDFs. The solution must minimize development effort. What should you do?",
+        "question":  "You have a Microsoft Foundry project named Project1.\nProject1 contains an application that processes PDF vendor invoices.\nYou need to configure Azure Document Intelligence in Foundry Tools to generate a Markdown output that preserves the sections and table structure of the PDFs.\nThe solution must minimize development effort.\nWhat should you do?",
         "options":  [
                         {
                             "id":  "a",
@@ -727,7 +727,7 @@
         "number":  61,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that ingests scanned PDF invoices stored in Azure Blob Storage. Each invoice contains printed fine items and has a table-based layout. Extracted results are stored as structured JSON and used as grounding data for an agent in a Retrieval Augmented Generation (RAG) solution. You need to create a single analyzer that meets the following requirements: Extracts the invoice number, invoice date, vendor name, and total amount across varying templates; returns confidence scores so that results with confidence below 0.80 can be routed for supervisor review. What should you use?",
+        "question":  "You have a Microsoft Foundry project that ingests scanned PDF invoices stored in Azure Blob Storage.\nEach invoice contains printed fine items and has a table-based layout.\nExtracted results are stored as structured JSON and used as grounding data for an agent in a Retrieval Augmented Generation (RAG) solution.\nYou need to create a single analyzer that meets the following requirements:\nExtracts the invoice number, invoice date, vendor name, and total amount across varying templates.\nReturns confidence scores so that results with confidence below 0.80 can be routed for supervisor review.\nWhat should you use?",
         "options":  [
                         {
                             "id":  "a",
@@ -755,7 +755,7 @@
         "number":  62,
         "type":  "Multiple Choice",
         "questionType":  "single-choice",
-        "question":  "You have a Microsoft Foundry project that uses Azure AI Search to ground an agent in internal documentation. After a recent content update, users report that the agent\u0027s answers have become less accurate. You need to identify whether the retrieved content is negatively influencing the model\u0027s generated responses. Which observability signal should you review?",
+        "question":  "You have a Microsoft Foundry project that uses Azure AI Search to ground an agent in internal documentation.\nAfter a recent content update, users report that the agent\u0027s answers have become less accurate.\nYou need to identify whether the retrieved content is negatively influencing the model\u0027s generated responses.\nWhich observability signal should you review?",
         "options":  [
                         {
                             "id":  "a",

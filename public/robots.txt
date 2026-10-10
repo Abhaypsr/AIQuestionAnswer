@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aiexamquestion-hfd2hjh7cxgwgagz.centralindia-01.azurewebsites.net/sitemap.xml

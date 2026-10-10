@@ -18,7 +18,7 @@
     "number": 32,
     "type": "Drag and Drop",
     "questionType": "drag-drop",
-    "question": "You need to enable an agent to use web search, execute code, and access file content. Which capabilities should you include? To answer, drag the appropriate capabilities to the correct answer area. Each capability may be used once or not at all.",
+    "question": "DRAG DROP -\nYou have a Microsoft Foundry project that contains an agent used by the financial analysts at your company.\nYou need to optimize the agent workflow by providing additional data access and processing capabilities. The solution must meet the following requirements:\nEnsure that the agent can perform calculations during conversations.\nEnsure that the agent can access up-to-date information from public websites.\nEnsure that the agent can retrieve information from documents uploaded directly to the agent.\nWhat should you use for each requirement? To answer, drag the appropriate tools to the correct requirements. Each tool may be used once, more than once, or not at all.\nYou may need to drag the split bar between panes or scroll to view content.\nNOTE: Each correct selection is worth one point.",
     "sourceLabel": "Capabilities",
     "targetLabel": "Answer Area",
     "configurations": [

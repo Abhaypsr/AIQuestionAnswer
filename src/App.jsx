@@ -122,6 +122,54 @@ function App() {
     return () => window.removeEventListener('pageshow', handlePageShow);
   }, [page, screen, view]);
 
+  useEffect(() => {
+    const canonicalPath = window.location.pathname.length > 1
+      ? window.location.pathname.replace(/\/$/, '')
+      : window.location.pathname;
+    let title = 'Free AI-103 Practice Questions | Exam Questions';
+    let description = 'Practice AI-103 exam topics with free questions, answer feedback, case study practice, and study notes.';
+    const robots = screen === 'upcoming' ? 'noindex,follow' : 'index,follow';
+
+    if (screen === 'course' && view === 'questions') {
+      title = `AI-103 Practice Questions - Page ${page + 1} | Exam Questions`;
+      description = `Practice AI-103 questions on page ${page + 1} of ${totalPages}. Choose answers and review feedback.`;
+    } else if (screen === 'course' && view === 'caseStudy') {
+      title = 'AI-103 Case Study Practice | Exam Questions';
+      description = 'Review the Contoso Agent case study and practice its AI-103 questions.';
+    } else if (screen === 'notes') {
+      title = 'AI-103 Study Notes and Modules | Exam Questions';
+      description = 'Browse and download AI-103 study notes and module documents.';
+    } else if (screen === 'upcoming') {
+      title = 'AI-901 Questions - Upcoming | Exam Questions';
+      description = 'AI-901 practice questions are coming soon.';
+    }
+
+    document.title = title;
+    const setMeta = (attribute, key, content) => {
+      let tag = document.head.querySelector(`meta[${attribute}="${key}"]`);
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute(attribute, key);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    };
+
+    setMeta('name', 'description', description);
+    setMeta('name', 'robots', robots);
+    setMeta('property', 'og:title', title);
+    setMeta('property', 'og:description', description);
+    setMeta('property', 'og:url', `${window.location.origin}${canonicalPath}`);
+
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `${window.location.origin}${canonicalPath}`;
+  }, [page, screen, totalPages, view]);
+
   const openAI103 = () => {
     setRoute({ screen: 'course', page: 0 });
     setView('questions');
@@ -258,7 +306,42 @@ function App() {
           <h3>{question.question || 'Question text is missing from the source JSON.'}</h3>
         )}
 
-        {question.code && <pre className="question-code">{question.code}</pre>}
+        {question.questionTable && (
+          <div className="question-table-wrap">
+            <table className="question-table">
+              <thead>
+                <tr>
+                  {question.questionTable.headers.map((header) => (
+                    <th key={header} scope="col">{header}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {question.questionTable.rows.map((row) => (
+                  <tr key={row[0]}>
+                    {row.map((cell, index) => <td key={index}>{cell}</td>)}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {question.questionContinuation && (
+          <div className="question-prompt">{question.questionContinuation}</div>
+        )}
+
+        {question.code && (
+          <pre className="question-code">
+            {question.questionType === 'multi-dropdown'
+              ? question.code.split(/(\[[A-Za-z_][A-Za-z0-9_-]*\])/g).map((part, index) => (
+                /^\[[A-Za-z_][A-Za-z0-9_-]*\]$/.test(part)
+                  ? <span key={index} className="code-answer-slot">{part}</span>
+                  : part
+              ))
+              : question.code}
+          </pre>
+        )}
 
         {question.image && (
           <img
@@ -734,7 +817,7 @@ function App() {
             {view === 'questions' && (
               <>
                 <section className="page-header">
-                  <h1>AI-301</h1>
+                  <h1>AI-103 Practice Questions</h1>
                 </section>
 
                 <section className="questions-stack">{pageQuestions.map(renderQuestion)}</section>

@@ -157,6 +157,7 @@ const imageQuestionCorrections = {
     question: 'You have an Azure subscription.\n\nYou need to create a new resource that will generate fictional stores in response to user prompts. The solution must ensure that the resource uses a customer-managed key to protect data.\n\nHow should you complete the script? To answer, select the appropriate options in the answer area.\n\nNOTE: Each correct selection is worth one point.',
     type: 'Dropdown',
     questionType: 'multi-dropdown',
+    code: 'az cognitiveservices account create -n myresource -g myResourceGroup --kind [kind] --sku S -l WestEurope\n[api-properties] \'{\n  "keySource": "Microsoft.KeyVault",\n  "keyVaultProperties": {\n    "keyName": "KeyName",\n    "keyVersion": "secretVersion",\n    "keyVaultUri": "https://issue23056kv.vault.azure.net/"\n  }\n}\'',
     answerFields: [
       {
         id: 'kind',
@@ -217,7 +218,7 @@ const imageQuestionCorrections = {
   113: {
     type: 'Dropdown',
     questionType: 'multi-dropdown',
-    code: 'PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.CognitiveServices/accounts/{accountName}?api-version=2021-04-30\n{\n  "location": "West US",\n  "kind": [kind],\n  "sku": { "name": "S0" },\n  "properties": {},\n  "identity": { "type": "SystemAssigned" }\n}',
+    code: '[http-method] https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.CognitiveServices/accounts/{accountName}?api-version=2021-04-30\n{\n  "location": "West US",\n  "kind": [kind],\n  "sku": { "name": "S0" },\n  "properties": {},\n  "identity": { "type": "SystemAssigned" }\n}',
     answerFields: [
       {
         id: 'http-method',

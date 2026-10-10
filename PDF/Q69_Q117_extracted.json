@@ -314,7 +314,7 @@
         "text": "prebuilt-layout"
       }
     ],
-    "correct_answer": "A"
+    "correct_answer": "B"
   },
   {
     "question_number": 82,
@@ -840,13 +840,6 @@
       }
     ],
     "correct_answer": "B"
-  },
-  {
-    "question_number": 107,
-    "question": null,
-    "question_type": null,
-    "options": null,
-    "correct_answer": null
   },
   {
     "question_number": 108,

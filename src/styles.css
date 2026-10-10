@@ -293,6 +293,33 @@ button, select {
   white-space: pre-line;
 }
 
+.question-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0 0 1rem;
+}
+
+.question-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.question-table th,
+.question-table td {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.question-table th {
+  background: var(--panel-alt);
+  font-weight: 700;
+}
+
 .question-code {
   overflow-x: auto;
   margin: 0 0 1rem;
@@ -303,6 +330,15 @@ button, select {
   color: var(--text);
   font: 0.88rem/1.5 Consolas, "Courier New", monospace;
   white-space: pre;
+}
+
+.code-answer-slot {
+  color: var(--primary-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 .question-exhibit {

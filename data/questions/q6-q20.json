@@ -4,7 +4,7 @@
     "number": 6,
     "type": "Hotspot",
     "questionType": "multi-dropdown",
-    "question": "HOTSPOT -\nYou need to ensure that App1 meets the following requirements:\nAuthenticates by using a Microsoft Entra managed identity\nHow should you complete the Python code? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
+    "question": "HOTSPOT -\nYou have a Python application named App1 that integrates with a Microsoft Foundry project named Project1.\nYou need to ensure that App1 meets the following requirements:\nAuthenticates by using a Microsoft Entra managed identity\nSends prompts to a deployed model by using the Azure OpenAI Responses API\nHow should you complete the Python code? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
     "code": "from azure.identity import DefaultAzureCredential\nfrom azure.ai.projects import AIProjectClient\n\ncredential = [credential]\nproject_client = AIProjectClient(\n    endpoint=\"https://contosoai.services.ai.azure.com/api/projects/project1\",\n    credential=credential,\n)\nwith project_client.get_openai_client() as openai_client:\n    response = openai_client.responses.[method](\n        model=\"trail-guide-chat\",\n        input=\"Create a 3-day hiking itinerary near Seattle.\",\n    )\n    print(response.output_text)",
     "answerFields": [
       {
@@ -33,7 +33,7 @@
     "number": 7,
     "type": "Hotspot",
     "questionType": "multi-dropdown",
-    "question": "You have a Microsoft Foundry project that contains a workflow for a customer support triage process.\nYou have an Ask a question node that stores user responses in a local variable named Var01.\nYou need to create the following Power Fx expressions:\nAn if/else condition expression that ensures that Var01 contains a value\nA Send message expression that returns the stored user response in uppercase\nNOTE: Each correct selection is worth one point.",
+    "question": "You have a Microsoft Foundry project that contains a workflow for a customer support triage process.\nYou have an Ask a question node that stores user responses in a local variable named Var01.\nYou need to create the following Power Fx expressions:\nAn if/else condition expression that ensures that Var01 contains a value\nA Send message expression that returns the stored user response in uppercase\nHow should you configure the expressions? To answer, select the appropriate options in the answer area.\nNOTE: Each correct selection is worth one point.",
     "answerFields": [
       {
         "id": "if-else-condition",
@@ -91,7 +91,16 @@
     "number": 9,
     "type": "Multiple Choice",
     "questionType": "single-choice",
-    "question": "You have a Microsoft Foundry project that contains three agents as shown in the following table.\nTriageAgent: Classifies incoming customer requests\nPolicyAgent: Answers policy questions by searching internal content\nActionAgent: Creates or updates tickets by calling an HTTP API\n\nYou need to orchestrate the agents to ensure that the customer requests meet the following requirements:\nSupport a deterministic, step-based process that uses conditional branching and shared state across the agents.\nOptionally trigger a ticket action based on the triage result.\nThe solution must minimize development effort.\nWhat should you include in the solution?",
+    "question": "You have a Microsoft Foundry project that contains three agents as shown in the following table.",
+    "questionTable": {
+      "headers": ["Name", "Description"],
+      "rows": [
+        ["TriageAgent", "Classifies incoming customer requests"],
+        ["PolicyAgent", "Answers policy questions by searching internal content"],
+        ["ActionAgent", "Creates or updates tickets by calling an HTTP API"]
+      ]
+    },
+    "questionContinuation": "You need to orchestrate the agents to ensure that the customer requests meet the following requirements:\nSupport a deterministic, step-based process that uses conditional branching and shared state across the agents.\nOptionally trigger a ticket action based on the triage result.\nThe solution must minimize development effort.\nWhat should you include in the solution?",
     "options": [
       { "id": "a", "label": "A. a workflow" },
       { "id": "b", "label": "B. threads and runs without a workflow" },
@@ -162,7 +171,7 @@
     "number": 13,
     "type": "Multiple Choice",
     "questionType": "single-choice",
-    "question": "You have a Microsoft Foundry project that contains a model deployment.\nYou have an application that calls the deployment by using the Azure OpenAI v1 API and DefaultAzureCredential.\nThe developers at your company receive HTTP 403 errors when they send inference requests, even after running az login.\nWhich role-based access control (RBAC) role should you assign to the developers?",
+    "question": "You have a Microsoft Foundry project that contains a model deployment.\nYou have an application that calls the deployment by using the Azure OpenAI v1 API and DefaultAzureCredential.\nThe developers at your company receive HTTP 403 errors when they send inference requests, even after running az login.\nYou need to ensure that the developers can perform model inference. The solution must follow the principle of least privilege.\nWhich role-based access control (RBAC) role should you assign to the developers?",
     "options": [
       { "id": "a", "label": "A. Cognitive Services User" },
       { "id": "b", "label": "B. Cognitive Services OpenAI User" },
@@ -176,7 +185,7 @@
     "number": 14,
     "type": "Multiple Choice",
     "questionType": "single-choice",
-    "question": "You have a Microsoft Foundry project that contains an agent. The agent has a Model Context Protocol (MCP) tool that queries a knowledge base stored in Azure AI Search.\nYou are provided with the following code snippet that runs the agent.\nYou need to add the correct tool_choice parameter to the code to deterministically force the agent to invoke the MCP tool on each run.\nWhat should you add?",
+    "question": "You have a Microsoft Foundry project that contains an agent. The agent has a Model Context Protocol (MCP) tool that queries a knowledge base stored in Azure AI Search.\nSome agent runs return answers from the base model without invoking the knowledge base, which results in responses without grounded citations.\nYou are provided with the following code snippet that runs the agent.\nYou need to add the correct tool_choice parameter to the code to deterministically force the agent to invoke the MCP tool on each run.\nWhat should you add?",
     "code": "run = project_client.agents.runs.create_and_process(\n    thread_id=thread.id,\n    agent_id=agent.id\n)",
     "options": [
       { "id": "a", "label": "A. tool_choice=(\"required\")" },
