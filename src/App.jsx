@@ -178,6 +178,13 @@ function App() {
     window.history.pushState({}, '', ai103Path(1));
   };
 
+  const openCaseStudy = () => {
+    setRoute({ screen: 'course', page: 0 });
+    setView('caseStudy');
+    window.history.pushState({}, '', ai103Path(1));
+    window.scrollTo(0, 0);
+  };
+
   const openAI901 = () => {
     setRoute({ screen: 'upcoming', page: 0 });
     window.history.pushState({}, '', `${basePath}/AI901` || '/AI901');
@@ -771,7 +778,19 @@ function App() {
           <section className="notes-page">
             <nav className="course-toolbar" aria-label="AI-103 navigation">
               <button className="back-link" type="button" onClick={goHome}>All exams</button>
-              <button className="back-link" type="button" onClick={openAI103}>AI-103 Questions</button>
+              <div className="course-view-actions">
+                <div className="view-tabs">
+                  <button className="tab" type="button" onClick={openAI103}>
+                    Questions
+                  </button>
+                  <button className="tab" type="button" onClick={openCaseStudy}>
+                    Case Study
+                  </button>
+                  <button className="tab active" type="button" onClick={openNotes} aria-current="page">
+                    Notes
+                  </button>
+                </div>
+              </div>
             </nav>
             <div className="page-header">
               <h1>AI-103 Notes</h1>
@@ -797,22 +816,26 @@ function App() {
           <>
             <nav className="course-toolbar" aria-label="Course navigation">
               <button className="back-link" type="button" onClick={goHome}>All exams</button>
-              <button className="back-link" type="button" onClick={openNotes}>Notes</button>
-              <div className="view-tabs">
-                <button
-                  type="button"
-                  className={view === 'questions' ? 'tab active' : 'tab'}
-                  onClick={() => setView('questions')}
-                >
-                  Questions
-                </button>
-                <button
-                  type="button"
-                  className={view === 'caseStudy' ? 'tab active' : 'tab'}
-                  onClick={() => setView('caseStudy')}
-                >
-                  Case Study
-                </button>
+              <div className="course-view-actions">
+                <div className="view-tabs">
+                  <button
+                    type="button"
+                    className={view === 'questions' ? 'tab active' : 'tab'}
+                    onClick={() => setView('questions')}
+                  >
+                    Questions
+                  </button>
+                  <button
+                    type="button"
+                    className={view === 'caseStudy' ? 'tab active' : 'tab'}
+                    onClick={() => setView('caseStudy')}
+                  >
+                    Case Study
+                  </button>
+                  <button className="tab" type="button" onClick={openNotes}>
+                    Notes
+                  </button>
+                </div>
               </div>
             </nav>
 

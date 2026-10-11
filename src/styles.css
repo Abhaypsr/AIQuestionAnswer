@@ -185,6 +185,16 @@ button, select {
   margin-bottom: 1.5rem;
 }
 
+.course-view-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.course-view-actions .view-tabs {
+  margin-bottom: 0;
+}
+
 .back-link {
   border: 0;
   padding: 0.45rem 0;
